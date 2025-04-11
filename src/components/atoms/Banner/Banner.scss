@@ -1,0 +1,45 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: 223px;
+  overflow: hidden;
+  border-radius: 25px;
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    z-index: 1;
+    padding: 2rem;
+    text-wrap: balance;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .banner {
+    height: 111px;
+
+    &__title {
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+}
+

@@ -1,0 +1,18 @@
+.logo {
+  &__img {
+    object-fit: fill;
+    height: 68px;
+    width: 210px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    &__img {
+      height: 46px;
+      width: 145px;
+    }
+  }
+}
+
+
