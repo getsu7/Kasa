@@ -1,9 +1,7 @@
-@import "modern-normalize";
+@use './modern-normalize.scss';
 
 #root {
   background-color: #FFFFFF;
   font-family: Montserrat, sans-serif;
   color: #333;
 }
-
-

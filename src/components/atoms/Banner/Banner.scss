@@ -32,12 +32,20 @@
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .banner {
     height: 111px;
 
     &__title {
       font-size: 24px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .banner {
+    &__title {
       text-align: left;
     }
   }
