@@ -1,0 +1,103 @@
+.housing {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 3rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 2rem;
+
+  &__infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  &__title {
+    color: #FF6060;
+    font-size: 36px;
+    margin: 0;
+  }
+
+  &__location {
+    margin: 0;
+  }
+
+  &__tags {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__tag {
+    background: #FF6060;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    color: #FFFFFF;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+
+  &__host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__host-details {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__host-name {
+    font-size: 18px;
+    color: #FF6060;
+    padding: 1rem 1rem 0 0;
+    max-width: 100px;
+    text-align: right;
+    word-break: break-word;
+  }
+
+  &__host-image {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  &__star {
+    color: #FF6060;
+    font-size: 24px;
+  }
+
+  &__collapse {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+  }
+
+}

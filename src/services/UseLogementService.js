@@ -11,7 +11,18 @@ export const UseLogementService = () => {
     }
   };
 
+  const getLogementById = async (id) => {
+    try {
+      const response = await fetch(URL);
+      const data = await response.json();
+      return data.find(logement => logement.id === id);
+    } catch (e) {
+      throw new Error('Erreur lors de la récupération du logement : ' + e);
+    }
+  };
+
   return {
-    getLogements
+    getLogements,
+    getLogementById
   };
 };
