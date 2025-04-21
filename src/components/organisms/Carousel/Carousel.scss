@@ -45,3 +45,17 @@
   object-fit: cover;
   border-radius: 25px;
 }
+
+@media (max-width: 768px) {
+  .carousel {
+    height: 255px;
+
+    &__btn {
+      font-size: 4rem;
+    }
+
+    &__counter {
+      font-size: 1rem;
+    }
+  }
+}

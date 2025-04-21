@@ -1,6 +1,6 @@
-// src/components/molecules/Collapse/Collapse.jsx
 import { useState } from 'react';
 import './Collapse.scss';
+import collapseArrow from '../../../assets/images/collapse-arrow.png';
 
 function Collapse({ title, content }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,8 @@ function Collapse({ title, content }) {
         type="button"
       >
         <span className="collapse__btn-text">{title}</span>
-        <i className={`fa-solid fa-chevron-down collapse__icon ${isOpen ? 'collapse__icon--rotate' : ''}`}></i>
+        <img className={`collapse__icon ${isOpen ? 'collapse__icon--rotate' : ''}`}
+             src={collapseArrow} />
       </button>
       {isOpen && (
         <div className="collapse__content">

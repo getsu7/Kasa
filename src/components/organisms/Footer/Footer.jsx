@@ -1,4 +1,4 @@
-const logoImage = 'http://localhost:5173/public/assets/images/LOGOfooter.png';
+import logoImage from '../../../assets/images/logo-footer.png';
 import './Footer.scss';
 
 function Footer() {

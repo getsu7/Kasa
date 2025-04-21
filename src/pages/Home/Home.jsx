@@ -1,5 +1,6 @@
 import './Home.scss';
 import Banner from '../../components/atoms/Banner/Banner.jsx';
+import bannerImage from '../../assets/images/banner.png';
 import Card from '../../components/atoms/Card/Card.jsx';
 import { UseLogementService } from '../../services/UseLogementService.js';
 import { useEffect, useState } from 'react';
@@ -11,9 +12,6 @@ function Home() {
   const load = async () => {
     try {
       const response = await UseLogementService().getLogements();
-      if (!response.ok) {
-        throw new Error(`Erreur HTTP : ${response.status}`);
-      }
       const data = await response.json();
       setLogements(data);
     } catch (err) {
@@ -28,7 +26,7 @@ function Home() {
 
   return (
     <section className="main-template">
-      <Banner />
+      <Banner bannerImage={bannerImage} text="Chez vous, partout et ailleurs" />
       {error ? (
         <div className="error-message">Erreur : {error}</div>
       ) : (

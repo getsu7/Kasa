@@ -24,6 +24,7 @@
     color: #FF6060;
     font-size: 36px;
     margin: 0;
+    font-weight: 500;
   }
 
   &__location {
@@ -99,5 +100,67 @@
     gap: 1rem;
     width: 100%;
   }
+
+}
+
+@media (max-width: 768px) {
+  .housing {
+    padding: 1rem;
+    gap: 1rem;
+
+    &__infos {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__location {
+      font-size: 14px;
+    }
+
+    &__tag {
+      border-radius: 10px;
+      font-size: 10px;
+      padding: 0.3rem;
+    }
+
+    &__collapse {
+      flex-direction: column;
+    }
+
+    &__details {
+      gap: 0.5rem;
+    }
+
+    &__host {
+      flex-direction: row-reverse;
+      gap: 0.5rem;
+    }
+
+    &__host-name {
+      font-size: 14px;
+      padding: 0;
+      max-width: 100%;
+      text-align: left;
+    }
+
+    &__host-image {
+      width: 32px;
+      height: 32px;
+    }
+
+    &__rating {
+      justify-content: flex-start;
+      height: 18px;
+    }
+
+    &__star {
+      font-size: 16px;
+    }
+  }
+
 
 }

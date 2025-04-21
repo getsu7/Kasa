@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { UseLogementService } from '../../services/UseLogementService.js';
 import Carousel from '../../components/organisms/Carousel/Carousel.jsx';
 import Collapse from '../../components/molecules/Collapse/Collapse.jsx';
+import starEmpty from '../../assets/images/star-empty.png';
+import starFull from '../../assets/images/star-filled.png';
 
 function Housing() {
   const { id } = useParams();
@@ -40,11 +42,10 @@ function Housing() {
                 <span className="housing__host-name">{logement.host.name}</span>
                 <img className="housing__host-image" src={logement.host.picture} alt={logement.host.name} />
               </div>
-              {/* TODO AJOUTER LE CSS POUR LES ETOILES VIDES*/}
               <div className="housing__rating">
                 {Array.from({ length: 5 }, (_, index) => (
-                  <i key={index}
-                     className={`fa-solid fa-star housing__star ${index < logement.rating ? '--filled' : ''}`}></i>
+                  <img key={index}
+                       src={index < logement.rating ? starFull : starEmpty} alt={logement.rating + ' stars'} />
                 ))}
               </div>
             </div>

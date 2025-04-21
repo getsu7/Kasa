@@ -1,5 +1,6 @@
 .collapse {
   width: 100%;
+  position: relative;
 
   &__btn {
     width: 100%;
@@ -16,11 +17,13 @@
 
   &__icon {
     transition: transform 0.3s ease;
+    width: 20px;
 
     &--rotate {
       transform: rotate(180deg);
     }
   }
+
 
   &__content {
     background: #F6F6F6;
@@ -37,4 +40,21 @@
   &__item {
     margin: 0.5rem 0;
   }
+}
+
+
+@media (max-width: 768px) {
+  .collapse {
+    height: 30px;
+
+
+    &__btn {
+      padding: 0.5rem;
+    }
+
+    &__content {
+      padding: 0.5rem;
+    }
+  }
+
 }
