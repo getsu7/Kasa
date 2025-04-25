@@ -11,8 +11,7 @@ function Home() {
 
   const load = async () => {
     try {
-      const response = await UseLogementService().getLogements();
-      const data = await response.json();
+      const data = await UseLogementService().getLogements();
       setLogements(data);
     } catch (err) {
       setError(err.message);

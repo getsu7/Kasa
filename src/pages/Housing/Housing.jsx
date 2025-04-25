@@ -10,10 +10,16 @@ import starFull from '../../assets/images/star-filled.png';
 function Housing() {
   const { id } = useParams();
   const [logement, setLogement] = useState(null);
+  const [error, setError] = useState(null);
 
   const load = async () => {
-    const response = await UseLogementService().getLogementById(id);
-    setLogement(response);
+    try {
+      const response = await UseLogementService().getLogementById(id);
+      setLogement(response);
+    } catch (e) {
+      setError(e.message);
+      console.error('Erreur lors du chargement des données :', e);
+    }
   };
 
   useEffect(() => {
@@ -22,6 +28,7 @@ function Housing() {
 
   return (
     <section className="housing">
+      {error && <div className="error-message">Erreur : {error}</div>}
       {logement && (
         <>
           <Carousel title={logement.title} pictures={logement.pictures} />
