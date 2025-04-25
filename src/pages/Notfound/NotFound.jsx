@@ -1,10 +1,13 @@
 import './NotFound.scss';
+import { useLocation } from 'react-router-dom';
 
-function NotFound() {
+function NotFound({ status, message }) {
+  const location = useLocation();
   return (
     <div className="not-found">
-      <h1>404 - Not Found</h1>
-      <p>The page you are looking for does not exist.</p>
+      <h1 className="not-found__status">{location.state?.status || status}</h1>
+      <p className="not-found__message">{location.state?.message || message}</p>
+      <a href="/" className="not-found__link">Retourner sur la page d'accueil</a>
     </div>
   );
 }

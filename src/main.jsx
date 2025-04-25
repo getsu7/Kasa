@@ -18,7 +18,8 @@ ReactDOM.createRoot(root).render(
       <Route path="/logement/:id" element={<Housing />} />
       <Route path="/about" element={<About />} />
       <Route path="/" element={<Home />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path="*" element={<NotFound status="404" message="Oups! La page que vous demandez n'existe pas." />} />
+      <Route path="/notfound" element={<NotFound />} />
     </Routes>
     <Footer />
   </BrowserRouter>

@@ -14,6 +14,7 @@
   justify-content: center;
   gap: 2rem;
   height: 100%;
+  color: #FF6060;
 }
 
 .card__list {
@@ -38,18 +39,15 @@
     padding: 1rem;
   }
 
+  .card__item {
+    flex: 1 1;
+    box-sizing: border-box;
+  }
+
   .card__list {
     background: #FFFFFF;
     padding: 0;
-  }
-
-  .card__item {
-    flex: 1 calc(50% - 2rem);
-  }
-}
-
-@media (max-width: 375px) {
-  .card__list {
     flex-direction: column;
   }
+
 }

@@ -21,19 +21,17 @@ function Collapse({ title, content }) {
         <img className={`collapse__icon ${isOpen ? 'collapse__icon--rotate' : ''}`}
              src={collapseArrow} />
       </button>
-      {isOpen && (
-        <div className="collapse__content">
-          {Array.isArray(content) ? (
-            <ul className="collapse__list">
-              {content.map((item, index) => (
-                <li key={index} className="collapse__item">{item}</li>
-              ))}
-            </ul>
-          ) : (
-            <p className="collapse__text">{content}</p>
-          )}
-        </div>
-      )}
+      <div className={`collapse__content ${isOpen ? 'collapse__content--active' : ''}`}>
+        {Array.isArray(content) ? (
+          <ul className="collapse__list">
+            {content.map((item, index) => (
+              <li key={index} className="collapse__item">{item}</li>
+            ))}
+          </ul>
+        ) : (
+          <p className="collapse__text">{content}</p>
+        )}
+      </div>
     </div>
   );
 }

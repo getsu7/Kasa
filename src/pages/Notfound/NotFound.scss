@@ -2,7 +2,50 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 100vh;
   text-align: center;
+  gap: 3rem;
+  padding: 1rem 0 3rem 0;
+
+  &__status {
+    font-size: 11.5rem;
+    font-weight: 700;
+    color: #FF6060;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__message {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #FF6060;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .not-found {
+
+    &__status {
+      font-size: 5rem;
+    }
+
+    &__message {
+      max-width: 300px;
+      font-size: 1rem;
+      vertical-align: bottom;
+    }
+
+    &__link {
+      font-size: 0.8rem;
+    }
+  }
 }

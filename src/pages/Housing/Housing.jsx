@@ -6,18 +6,28 @@ import Carousel from '../../components/organisms/Carousel/Carousel.jsx';
 import Collapse from '../../components/molecules/Collapse/Collapse.jsx';
 import starEmpty from '../../assets/images/star-empty.png';
 import starFull from '../../assets/images/star-filled.png';
+import { useNavigate } from 'react-router';
 
 function Housing() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [logement, setLogement] = useState(null);
-  const [error, setError] = useState(null);
 
   const load = async () => {
     try {
       const response = await UseLogementService().getLogementById(id);
+      if (!response) {
+        navigate('/notfound', {
+          state: {
+            status: 'Oups!',
+            message: 'Le logement que vous demandez n\'existe pas.'
+          }
+        });
+        return;
+      }
       setLogement(response);
     } catch (e) {
-      setError(e.message);
+      navigate('/notfound', { state: { message: e.toString() } });
       console.error('Erreur lors du chargement des données :', e);
     }
   };
@@ -28,7 +38,6 @@ function Housing() {
 
   return (
     <section className="housing">
-      {error && <div className="error-message">Erreur : {error}</div>}
       {logement && (
         <>
           <Carousel title={logement.title} pictures={logement.pictures} />
