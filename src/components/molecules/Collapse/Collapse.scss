@@ -1,6 +1,7 @@
 .collapse {
   width: 100%;
   position: relative;
+  z-index: 2;
 
   &__btn {
     width: 100%;
@@ -24,7 +25,6 @@
     }
   }
 
-
   &__content {
     background: #F6F6F6;
     padding: 1rem;
@@ -45,7 +45,7 @@
 
 @media (max-width: 768px) {
   .collapse {
-    height: 30px;
+    min-height: 30px;
 
 
     &__btn {
